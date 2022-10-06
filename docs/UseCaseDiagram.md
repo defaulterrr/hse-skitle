@@ -1,0 +1,9 @@
+![photo_2022-09-28_19-58-50](https://user-images.githubusercontent.com/113180456/194382697-f5727f66-b1cf-4a21-a77c-d950b83076bb.jpg)
+1. When a client needs to solve some problem at home, and he wants to find a specialist to solve it, in the FixMe application a client creates a task. With the help of the system tags, clients create a detailed description of the type, set complexity and specialty of the master that will be needed for troubleshooting. To clarify the details, clients can modify the task and attach photos.
+2. To register in the system, specialists check the personal page for authenticity. A specialist fills out a form with the data and attaches a photo of the document that confirms the identity. After verification, the verification status will be assigned, or the application will be rejected.
+3. Specialists view active tasks from users on an interactive map before offering their services. They can read task descriptions and view customer profiles.
+4. Specialists respond to the task and sends a request to the client to make an appointment.
+5. When the master has responded to the task, the client chooses a convenient time to provide the service. Users can use the chat to clarify the details of the task. Clients can change/cancel time of the appointment.
+6. When the client needs to solve a problem of low complexity evaluate the current situation on the task, he/she uses a consultation with the master in a chat or an additional video call function.
+7.To log in to the system, users register. Users login to the page, fill all required field on the page. If registration is successful users get registration message. Precondition - Users have an account and security key to login. Post condition - User registration is success full.
+8. Users, both the master and the client, leave feedback about each other and the process of receiving / providing the service.
