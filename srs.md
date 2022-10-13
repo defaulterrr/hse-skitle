@@ -106,3 +106,36 @@ etc.
    no data should be lost in case of malfunctions. Specific SLAs should be calculated later in the 
    development process and agreed upon with the stakeholders.
 
+## 3. Requirements
+
+### 3.1 Functional Requirements
+
+1. As a user, i want to be able to see all available services for my location and request them
+   1. Service Requests contain following information:
+      1. Username, in order to address the user
+      2. Email + Phone Number, in order to contact the person
+      3. Address
+      4. Service type (Plumbing, electric works, miscellanous, etc)
+      5. Service description (what needs to be done + user's comments)
+
+2. As a user, i want my service requests to be matched to a specialist and be satisfied in a reasonable time
+   1. Reasonable time is calculated from the general availability of specialists and mean TTR (Time To Reponse) in the area. Exact metrics are to be evaluated during development and usage of the system
+   2. Match happens when both user and specialist did agree upon terms of the to-be-provided service
+   
+3. As a specialist, i want to be able to offer my services in response to users' requests
+   1. Offer is a proposal of either providing a service under pre-specified terms or under altered terms (for exmaple, when a service could not be provided without additional payment, i.e. in a hazardous environment)
+   
+4. As a specialist, i want to be able to see market analytics for my services, to provide the best experience for users and, on the other hand, dictate terms of services that are appropriate for me and for the market
+   1. Analytics may include
+      1. Current rate of requests
+      2. Requests details with provided anonymity from both user and specialist side
+      3. Currently charged rates by service types
+
+### 3.2 Non-functional Requirements
+
+1. System should be available to the general public with the Uptime SLA of 99.95% of the time
+   1. That said, it is appropriate for system to gracefully degrade under unexpected workloads
+2. System should provide adequate level of security for users:
+   1. Provide a security mechanisms which will protect users and specialists from malicious activities from either side
+   2. Provide a security for ALL personal data. In some cases, anonymity is appropriate.
+   3. Provide a feedback system that allows moderators to filter out malicious users and specialists
