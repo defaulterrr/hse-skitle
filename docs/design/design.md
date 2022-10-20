@@ -16,13 +16,20 @@ As our general design strategy, we chose Object Oriented Design as it allows us 
 design system to be scaled for each independent object domain. Independent component scaling
 is crucial to our system.
 
-### Subsystem decomposition
+### Subsystems decomposition
 
-![Subsystems](./subsystems.png)
+![Server-subsystems](./server-subsystems.png)
+![App-subsystems](./app-subsystems.png)
+
+### Functional decomposition
+
+![Func-decomposition](./func-decomposition.png)
 
 ## Part II – Main components and modules of the product and their levels of Reusability
 
 ### Main Components
+
+## Server components
 
 1. Scheduler – matchmaking between the clients and the specialists, responsible for job statuses
 2. JobRequests – managing all job requests from clients
@@ -30,10 +37,26 @@ is crucial to our system.
 4. Clients – managing clients and their profiles
 5. Specialists – managing specialists and their profiles
 6. Feedback – managing and ingesting user feedback for various statistics and scheduler
-7. Client (Mobile) – user-facing component of the system
-8. Ingress – single backend ingress point of the system. Manages authentication using other services
+7. Ingress – single backend ingress point of the system. Manages authentication using other services
+8. Client (Mobile) – user-facing component of the system
+
+## App components
+
+9. Tasks(Job) Aggregator - matching all own job requests for users and active/available job requests for specialists
+10. Specialists Aggregator - matching all specialists sutable for requests
+11. Notifications - subsystem destined for sending different types of notifications for both users/specialists
+12. User-Master(specialist) communication - subsystem destined for bidirectional communication between user and specialist during requests/consultations
 
 ### Reusability
+
+In general, all server components are developed guided by active approach. The developed services can be reused for all types of clients (web, mobile), which is facilitated by the architecture we have chosen.
+Such components include: scheduler, JobRequests, JobOffers, Clients, Specialists, Feedback, Ingress.
+At the same time, some of the above components will be reused by another: Clients and Specialists components will be reused by JobRequests, JobOffers, Feedback, Scheduler.
+Moreover, some of the components can reuse third-party services (for example, cloud ones): Notification (from App components) can use services to send notifications (for example, Firebase).
+Client services, on the other hand, will most often be tightly coupled to the host platform, making cross-platform reuse difficult.
+
+Passive approach: Tasks(Job) Aggregator, Specialists Aggregator, Notifications, User-Master(specialist) communication, Clients, Specialists, JobRequests, JobOffers, Feedback, Schedule
+Active approach: Schedule, JobRequests, JobOffers, Clients, Specialists, Feedback, Ingress
 
 System reuse:
 
@@ -45,8 +68,3 @@ Application reuse:
 1. Databases (long-term and caches) – Redis, Postgres etc..
 2. Telemetry components (logs, metrics, traces) – Grafana, Prometheus, Jaeger, Loki, etc...
 3. Deployment systems – all services will be used under shared environments through the means of containerization
-
-Component reuse:
-
-1. All services will use same SDK for inter-service communication
-2. All services will use same SDKs for 3rd party components integration (database drivers, etc...)
