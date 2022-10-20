@@ -19,6 +19,7 @@ is crucial to our system.
 ### Subsystems decomposition
 
 ![Server-subsystems](./server-subsystems.png)
+
 ![App-subsystems](./app-subsystems.png)
 
 ### Functional decomposition
