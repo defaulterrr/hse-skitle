@@ -1,4 +1,21 @@
-# FixMe by Skitle – Software Requirements Specification
+# "FixMe" by Skitle
+Software Requirements Specification
+
+## Version 1.0
+
+## Date – October 22, 2022
+
+## Authors
+
+- Svyat Petrov
+- Anna Esikova
+- Gosha Miroshnik
+- Elizaveta Frolova
+- Semyon Savelev
+
+## Prepared for Software Engineering Methodology 
+### Professor: Saleh Hadi, PhD
+
 
 ## 1. Introduction
 
@@ -8,17 +25,13 @@ Main purpose of the following document is to build an online system that manages
 public in-house services. Objective of this management is to ease communication between clients
 and specialists.
 
-### 1.2 Document Conventions
-
-None so far
-
-### 1.3 Inteded Audience and Reading Suggestions
+### 1.2 Inteded Audience and Reading Suggestions
 
 This project is a prototype for the final product and it is restricted within the HSE University
 premises. This has been implemented under the guidance of University professors. This document is
 useful to abovementioned professors, system developers and product managers.
 
-### 1.4 Project Scope
+### 1.3 Project Scope
 
 The purpose of the system is to ease the communication between clients (users that request some 
 kind of service) and specialists (users that provide some kind of service). Clients will be able
