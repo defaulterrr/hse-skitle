@@ -152,3 +152,7 @@ etc.
    1. Provide a security mechanisms which will protect users and specialists from malicious activities from either side
    2. Provide a security for ALL personal data. In some cases, anonymity is appropriate.
    3. Provide a feedback system that allows moderators to filter out malicious users and specialists
+
+## 4. Prioritization and Release plan
+
+The main task is to create multiple flows for our clickable prototype to preview a user's journey based on the developed software design for two parties: the client and the master. For the client, it is necessary to make it possible to create requests for creating tasks, for which the master would then be able to offer services. Master can view active customer requests and respond to them, as well as provide consulting services via chat. When the minimal requirements will be done, the additional features will be added via updates, but only if the product will find its market and its users.
