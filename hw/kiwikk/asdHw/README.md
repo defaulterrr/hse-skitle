@@ -12,3 +12,9 @@ The program takes 2 arguments:
 (end of input with two new lines)
 
 
+### 8 Queens
+"Main" design method was used to solve this problem.
+
+### KWIC
+"ADT" was used to solve this problem.
+
