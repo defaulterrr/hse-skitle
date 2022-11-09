@@ -19,9 +19,20 @@ The program takes 2 arguments:
 "ADT" was used to solve this problem.
 
 ### Comparison Table
+#### 8 Queens
 
-| Methos  | ADT | Main | Pipes-and-filters | Implicit invocation |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Methods  | ADT | Main | 
+| ------------- | ------------- | ------------- |
+| Easier to change algorithm implementation | + | |
+| Easier to change data representation  | | + |
+| Easier to add additional functions | + | |
+| More Performant | | + |
+| Solution to be reused | | + |
+
+#### KWIC
+
+| Methods  | ADT | Main | 
+| ------------- | ------------- | ------------- |
 | Easier to change algorithm implementation  |
 | Easier to change data representation  | 
 | Easier to add additional functions |
