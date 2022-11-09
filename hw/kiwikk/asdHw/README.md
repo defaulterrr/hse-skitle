@@ -21,8 +21,8 @@ The program takes 2 arguments:
 ### Comparison Table (Gosha Miroshnik)
 #### 8 Queens
 
-| Methods  | ADT | Main | Pipes-and-filters | Implicit invocation |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Methods  | ADT | Main | 
+| ------------- | ------------- | ------------- | 
 | Easier to change algorithm implementation | + | |
 | Easier to change data representation  | | + |
 | Easier to add additional functions | + | |
@@ -31,11 +31,11 @@ The program takes 2 arguments:
 
 #### KWIC
 
-| Methods  | ADT | Main | Pipes-and-filters | Implicit invocation |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Methods  | ADT | Main | 
+| ------------- | ------------- | ------------- |
 | Easier to change algorithm implementation | + | |
 | Easier to change data representation  | | + |
 | Easier to add additional functions | + | |
 | More Performant | | + |
-| Solution to be reused | | + |
+| Solution to be reused | + | |
 
