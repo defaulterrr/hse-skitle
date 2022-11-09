@@ -20,7 +20,7 @@ The program takes 2 arguments:
 
 ### Comparison Table
 
-| Methos  | ADT | Main | Pipes-and-filters | Implicit invocation |
+| Methods  | ADT | Main | Pipes-and-filters | Implicit invocation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Easier to change algorithm implementation  |
 | Easier to change data representation  | 
