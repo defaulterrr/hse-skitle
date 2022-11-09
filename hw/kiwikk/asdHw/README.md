@@ -18,7 +18,7 @@ The program takes 2 arguments:
 ### KWIC
 "ADT" was used to solve this problem.
 
-### Comparison Table (Gosha Miroshnik)
+### Comparison Table
 #### 8 Queens
 
 | Methods  | ADT | Main | 
