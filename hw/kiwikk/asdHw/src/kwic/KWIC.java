@@ -1,6 +1,5 @@
 package kwic;
 
-import kwic.filter.Filter;
 import kwic.io.InputOutput;
 import kwic.shift.CircularShift;
 import kwic.utilities.KWICUtility;
