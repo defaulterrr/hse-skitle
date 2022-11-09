@@ -12,7 +12,7 @@ Example file contains text dataset of three sentences
 | Easier to change algorithm implementation | + | |
 | Easier to change data representation  | | + |
 | Easier to add additional functions | + | |
-| More Performant | | + |
+| More Performant | + | + |
 | Solution to be reused | + | |
 
 #### 8 Queens
@@ -22,5 +22,5 @@ Example file contains text dataset of three sentences
 | Easier to change algorithm implementation | + | |
 | Easier to change data representation  | | + |
 | Easier to add additional functions | + | |
-| More Performant | | + |
+| More Performant | + | + |
 | Solution to be reused | | + |
