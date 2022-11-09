@@ -18,13 +18,24 @@ The program takes 2 arguments:
 ### KWIC
 "ADT" was used to solve this problem.
 
-### Comparison Table
+### Comparison Table (Gosha Miroshnik)
+#### 8 Queens
 
 | Methods  | ADT | Main | Pipes-and-filters | Implicit invocation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Easier to change algorithm implementation  |
-| Easier to change data representation  | 
-| Easier to add additional functions |
-| More Performant |
-| Solution to be reused|
+| Easier to change algorithm implementation | + | |
+| Easier to change data representation  | | + |
+| Easier to add additional functions | + | |
+| More Performant | | + |
+| Solution to be reused | | + |
+
+#### KWIC
+
+| Methods  | ADT | Main | Pipes-and-filters | Implicit invocation |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Easier to change algorithm implementation | + | |
+| Easier to change data representation  | | + |
+| Easier to add additional functions | + | |
+| More Performant | | + |
+| Solution to be reused | | + |
 
