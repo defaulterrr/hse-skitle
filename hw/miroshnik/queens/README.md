@@ -1,0 +1,1 @@
+You can run it using "python .\hw\miroshnik\queens\solution.py" command
