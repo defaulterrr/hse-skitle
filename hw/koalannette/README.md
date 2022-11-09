@@ -119,3 +119,13 @@ h1, c2, a3, f4, b5, e6, g7, d8
 h1, d2, a3, c4, f5, b6, g7, e8
 92
 ```
+### Comparison Table
+#### 8 Queens
+
+| Methods  | ADT | Main | 
+| ------------- | ------------- | ------------- | 
+| Easier to change algorithm implementation | + | |
+| Easier to change data representation  | | + |
+| Easier to add additional functions | + | |
+| More Performant | | + |
+| Solution to be reused | | + |
