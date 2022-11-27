@@ -20,7 +20,7 @@ spec:
       - image: {{ .Values.werf.image.jobs }}
         name: jobs
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           name: jobs
 ---
 apiVersion: v1
