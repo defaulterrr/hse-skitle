@@ -23,11 +23,26 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-#*_9h9)(y4*wti^36=qw#i5a@*z7zpp2by8jty#a2!+s%=z3n*"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    "auth.skitle.com"
+    "auth.skitle.com",
+    "*"
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
 
 
 # Application definition
@@ -79,8 +94,12 @@ WSGI_APPLICATION = "project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'auth',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'auth-db',
+        'PORT': '5432',
     }
 }
 
