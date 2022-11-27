@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jobs
+  name: jobs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jobs
+  template:
+    metadata:
+      labels:
+        app: jobs
+    spec:
+      imagePullSecrets:
+        - name: skitleregistrysecret
+      containers:
+      - image: {{ .Values.werf.image.jobs }}
+        name: jobs
+        env:
+        - name: "JOBS_POSTGRES_DSN"
+          value: "postgres://postgres:postgres@jobs-db:5432"
+        ports:
+        - containerPort: 8080
+          name: jobs
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: jobs
+  name: jobs
+spec:
+  ports:
+  - name: "jobs-service"
+    port: 8080
+  selector:
+    app: jobs

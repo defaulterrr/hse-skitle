@@ -1,0 +1,10 @@
+configVersion: 1
+project: hse-skitle
+---
+image: jobs
+dockerfile: Dockerfile
+context: backend/jobs
+---
+image: auth
+dockerfile: Dockerfile
+context: backend/auth
