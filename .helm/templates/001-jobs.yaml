@@ -16,6 +16,10 @@ spec:
     spec:
       imagePullSecrets:
         - name: skitleregistrysecret
+      initContainers:
+      - name: init-mydb
+        image: busybox:1.28
+        command: ['sh', '-c', "until nslookup jobs-db; do echo waiting for auth-db; sleep 2; done"]
       containers:
       - image: {{ .Values.werf.image.jobs }}
         name: jobs
