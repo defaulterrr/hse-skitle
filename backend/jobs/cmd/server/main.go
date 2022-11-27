@@ -90,7 +90,7 @@ func main() {
 			ctx.AbortWithError(http.StatusInternalServerError, fmt.Errorf("error in result query: %w", err))
 		}
 
-		ctx.JSON(http.StatusOK, rows)
+		ctx.JSON(http.StatusOK, result)
 
 		return
 	})
