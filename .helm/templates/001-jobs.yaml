@@ -35,6 +35,6 @@ metadata:
 spec:
   ports:
   - name: "jobs-service"
-    port: 80
+    port: 8080
   selector:
     app: jobs
