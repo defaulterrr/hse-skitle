@@ -25,7 +25,7 @@ type task struct {
 
 const migration = `
 CREATE TABLE IF NOT EXISTS task (
-	id BIGINT NOT NULL,
+	id BIGSERIAL NOT NULL,
 	tag TEXT NOT NULL,
 	description TEXT NOT NULL,
 	price BIGINT NOT NULL,
