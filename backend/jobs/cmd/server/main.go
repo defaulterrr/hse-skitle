@@ -96,12 +96,20 @@ func main() {
 	})
 
 	// post job
-	r.GET("/jobs/:id", func(ctx *gin.Context) {
-		ID := ctx.Param("id")
+	r.POST("/jobs", func(ctx *gin.Context) {
+		var t task
+
+		if err := ctx.BindJSON(&t); err != nil {
+			ctx.AbortWithError(http.StatusBadRequest, err)
+		}
 
 		var query string
-		if ID == "0" {
+		var args []any
+		if t.ID == 0 {
 			query = `INSERT INTO task (tag, description, price, image, address, status) VALUES($1, $2, $3, $4, $5, $6)`
+			args = []any{
+				t.Tag, t.Description, t.Price, t.Image, t.Address, t.Status,
+			}
 		} else {
 			query = `INSERT INTO task (id, tag, description, price, image, address, status) 
 		    VALUES($1, $2, $3, $4, $5, $6, $7)
@@ -112,12 +120,15 @@ func main() {
 			image = EXCLUDED.image,
 			address = EXCLUDED.address,
 			status = EXCLUDED.status`
+			args = []any{
+				t.ID, t.Tag, t.Description, t.Price, t.Image, t.Address, t.Status,
+			}
 		}
 
 		ctxWithTimeout, cancel := context.WithTimeout(ctx, time.Second*5)
 		defer cancel()
 
-		_, err := pool.Exec(ctxWithTimeout, query)
+		_, err := pool.Exec(ctxWithTimeout, query, args...)
 		if err != nil {
 			ctx.AbortWithError(http.StatusInternalServerError, fmt.Errorf("pool.Exec: %w", err))
 		}
