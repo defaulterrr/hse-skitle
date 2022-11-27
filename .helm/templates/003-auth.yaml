@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: auth
+  name: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      imagePullSecrets:
+        - name: skitleregistrysecret
+      containers:
+      - image: {{ .Values.werf.image.auth }}
+        name: auth
+        env:
+        - name: "auth_POSTGRES_DSN"
+          value: "postgres://postgres:postgres@auth-db:5432"
+        ports:
+        - containerPort: 8080
+          name: auth
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: auth
+  name: auth
+spec:
+  ports:
+  - name: "auth-service"
+    port: 8080
+  selector:
+    app: auth
