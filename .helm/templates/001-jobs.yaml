@@ -19,6 +19,9 @@ spec:
       containers:
       - image: {{ .Values.werf.image.jobs }}
         name: jobs
+        env:
+        - name: "JOBS_POSTGRES_DSN"
+          value: "postgres://postgres:postgres@jobs-db:5432"
         ports:
         - containerPort: 8080
           name: jobs
