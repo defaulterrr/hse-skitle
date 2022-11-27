@@ -23,6 +23,19 @@ type task struct {
 	Status      string `json:"status"`
 }
 
+const migration = `
+CREATE TABLE IF NOT EXISTS task (
+	id BIGINT NOT NULL,
+	tag TEXT NOT NULL,
+	description TEXT NOT NULL,
+	price BIGINT NOT NULL,
+	image TEXT NOT NULL,
+	address TEXT NOT NULL,
+	status TEXT NOT NULL,
+	CONSTRAINT task_pk PRIMARY KEY (id)
+);
+`
+
 func main() {
 	rootContext, cancel := context.WithCancel(context.Background())
 	defer cancel()
@@ -43,6 +56,10 @@ func main() {
 	pool, err := pgx.Connect(rootContext, config.PostgresDSN)
 	if err != nil {
 		logger.Fatal("failed to connect to database", zap.NamedError("error", err))
+	}
+
+	if _, err := pool.Exec(rootContext, migration); err != nil {
+		logger.Fatal("failed to migrate database", zap.NamedError("error", err))
 	}
 
 	// Get all jobs
