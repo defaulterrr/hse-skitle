@@ -15,7 +15,7 @@ spec:
         app: jobs
     spec:
       imagePullSecrets:
-        - name: registrysecret
+        - name: skitleregistrysecret
       containers:
       - image: {{ .Values.werf.image.jobs }}
         name: jobs

@@ -1,6 +1,5 @@
 configVersion: 1
 project: hse-skitle
-
 ---
 image: jobs
 dockerfile: Dockerfile
