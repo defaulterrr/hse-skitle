@@ -2,36 +2,36 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: vote
-  name: vote
+    app: jobs
+  name: jobs
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vote
+      app: jobs
   template:
     metadata:
       labels:
-        app: vote
+        app: jobs
     spec:
       imagePullSecrets:
         - name: registrysecret
       containers:
       - image: {{ .Values.werf.image.jobs }}
-        name: vote
+        name: jobs
         ports:
         - containerPort: 80
-          name: vote
+          name: jobs
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: vote
-  name: vote
+    app: jobs
+  name: jobs
 spec:
   ports:
-  - name: "vote-service"
+  - name: "jobs-service"
     port: 80
   selector:
-    app: vote
+    app: jobs
