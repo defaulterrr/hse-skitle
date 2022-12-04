@@ -1,0 +1,66 @@
+openapi: '3.0.2'
+info:
+  title: API Title
+  version: '1.0'
+servers:
+  - url: https://skitle.com/tasks
+paths:
+  /tasks:
+    get:
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+          required: false
+      tags:
+        - Tasks
+      responses:
+        200: 
+          description: Obtained requested task or all tasks associated with user
+        401:
+          description: Unauthorized
+        500:
+          description: Server side error
+    post:
+      tags:
+        - Tasks
+      responses:
+        201:
+          description: Task was created
+        401:
+          description: Unauthorized
+        500:
+          description: Server side error
+    patch:
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+          required: true
+      tags:
+        - Tasks
+      responses:
+        200:
+          description: Task was updated
+        401:
+          description: Unauthorized
+        500:
+          description: Server side error
+    delete:
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+          required: true
+      tags:
+        - Tasks
+      responses:
+        200:
+          description: Task was cancelled
+        401:
+          description: Unauthorized
+        500:
+          description: Server side error

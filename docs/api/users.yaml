@@ -1,0 +1,71 @@
+openapi: '3.0.2'
+info:
+  title: API Title
+  version: '1.0'
+servers:
+  - url: https://skitle.com/profile
+paths:
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      responses:
+        200:
+          description: Succesful login
+        400:
+          description: Invalid payload
+        401:
+          description: Invalid credentials
+        500:
+          description: Server side error
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      responses:
+        201:
+          description: User created
+        400:
+          description: Invalid payload
+        500:
+          description: Server side error
+
+  /auth/logout:
+    get:
+      tags:
+        - Auth
+      responses:
+        200:
+          description: All active sessions are reset
+        401:
+          description: Unauthorized or invalid token
+        500:
+          description: Server side error
+
+  /profile:
+    post:
+      tags:
+        - Profile
+      responses:
+        201:
+          description: Created new user profile
+        401:
+          description: Unauthorized
+        500:
+          description: Server side error
+    get:
+      tags:
+        - Profile
+      parameters:
+        - in: path
+          name: userID
+          schema:
+            type: integer
+          required: true
+      responses:
+        200:
+          description: Obtained requested profile
+        401:
+          description: Unauthorized
+        500:
+          description: Server side error
