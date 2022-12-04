@@ -1,0 +1,70 @@
+openapi: '3.0.2'
+info:
+  title: API Title
+  version: '1.0'
+servers:
+  - url: https://skitle.com/rating
+paths:
+  /feedback:
+    post:
+      tags:
+        - Feedback
+      parameters:
+        - in: path
+          required: true
+          name: taskID
+          schema:
+            type: integer
+      responses:
+        201:
+          description: Posted a new feedback
+        401:
+          description: Unauthorized
+        409:
+          description: Feedback was already provided by this user for this task
+        500:
+          description: Server side error
+    get:
+      tags:
+        - Feedback
+      parameters:
+        - in: query
+          name: taskID
+          schema:
+            type: integer
+        - in: query
+          name: userID
+          schema:
+            type: integer
+        - in: query
+          name: masterID
+          schema:
+            type: integer
+      
+      responses:
+        200:
+          description: Obtained requested feedbacks
+        401:
+          description: Unauthorized
+        500:
+          description: Server side error
+
+  /rating:
+    get:
+      tags:
+        - Rating
+      parameters:
+        - in: query
+          name: masterID
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Obtained requested rating
+        401:
+          description: Unauthorized
+        500:
+          description: Server side error
+        
+      

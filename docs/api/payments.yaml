@@ -1,0 +1,36 @@
+openapi: '3.0.2'
+info:
+  title: API Title
+  version: '1.0'
+servers:
+  - url: https://skitle.com/rating
+paths:
+  /payment:
+    post:
+      tags:
+        - Payments
+      responses:
+        201:
+          description: Posted a new payment
+        401:
+          description: Unauthorized
+        409:
+          description: Payment was already submitted
+        500:
+          description: Server side error
+    get:
+      tags:
+        - Payments
+      parameters:
+        - in: path
+          required: true
+          name: taskID
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Obtained payment status
+        401:
+          description: Unauthorized
+        500:
+          description: Server side error
