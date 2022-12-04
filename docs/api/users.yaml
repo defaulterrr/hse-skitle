@@ -1,7 +1,8 @@
 openapi: '3.0.2'
 info:
-  title: API Title
+  title: Skitle Users API
   version: '1.0'
+
 servers:
   - url: https://skitle.com/profile
 paths:
@@ -30,18 +31,6 @@ paths:
         500:
           description: Server side error
 
-  /auth/logout:
-    get:
-      tags:
-        - Auth
-      responses:
-        200:
-          description: All active sessions are reset
-        401:
-          description: Unauthorized or invalid token
-        500:
-          description: Server side error
-
   /profile:
     post:
       tags:
@@ -67,5 +56,21 @@ paths:
           description: Obtained requested profile
         401:
           description: Unauthorized
+        500:
+          description: Server side error
+
+  /profile/payment:
+    get:
+      parameters:
+        - in: query
+          name: userID
+          schema:
+            type: integer
+          required: true
+      responses:
+        200:
+          description: Obtained user's payment info
+        404:
+          description: Payment credentials not found for user or user does not exist
         500:
           description: Server side error
