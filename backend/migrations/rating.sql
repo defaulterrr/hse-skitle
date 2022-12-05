@@ -14,4 +14,4 @@ CREATE TABLE reviews (
     updated_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
-CREATE UNIQUE INDEX reviews_task_id_type ON reviews (task_id, type);
+CREATE UNIQUE INDEX reviews_task_id_type_unique_idx ON reviews (task_id, type);
