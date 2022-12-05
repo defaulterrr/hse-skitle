@@ -12,5 +12,8 @@ CREATE TABLE task (
     -- URL of the uploading photo
     photo TEXT NULL,
     -- user's address
-    address TEXT NOT NULL
+    address TEXT NOT NULL.
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    CONSTRAINT tasK_pk PRIMARY KEY (task_id)
 )
