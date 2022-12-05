@@ -14,9 +14,9 @@ CREATE TABLE task (
     task_id BIGSERIAL NOT NULL,
     -- unique task info id
     info_id BIGSERIAL NOT NULL,
-    -- unique task info id
+    -- unique user id
     user_id BIGSERIAL NOT NULL,
-    -- transation status
+    -- task accomplishment status
     status task_status NOT NULL,
 );
 
