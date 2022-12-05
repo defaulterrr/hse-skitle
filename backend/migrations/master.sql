@@ -7,5 +7,5 @@ CREATE TABLE master {
     updated_at TIMESTAMP NOT NULL DEFAULT NOW()
 };
 
-CREATE UNIQUE INDEX master_task_id ON master (task_id);
-CREATE UNIQUE INDEX master_id ON master (master_id);
+CREATE UNIQUE INDEX master_id_unique_idx ON master (master_id);
+CREATE UNIQUE INDEX master_task_id_unique_idx ON master (task_id);
