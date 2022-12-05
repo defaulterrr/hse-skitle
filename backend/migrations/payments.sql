@@ -13,4 +13,4 @@ CREATE TABLE payment_statuses {
     updated_at TIMESTAMP NOT NULL DEFAULT NOW()
 };
 
-CREATE UNIQUE INDEX payment_statuses_task_id_unique_idx ON payment_statuses (task_id);
+CREATE INDEX payment_statuses_task_id_idx ON payment_statuses (task_id);
