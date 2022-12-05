@@ -9,6 +9,9 @@ CREATE TABLE payment_statuses {
     to_metadata TEXT NOT NULL,
     -- transation status
     status SMALLINT NOT NULL,
+    
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
 
     -- use task_id as the primary key for lookups
     CONSTRAINT payment_statuses_pk PRIMARY KEY (task_id)
