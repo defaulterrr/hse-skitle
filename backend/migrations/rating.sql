@@ -9,7 +9,9 @@ CREATE TABLE reviews (
     -- id of the client who requested the task
     client_id BIGSERIAL NOT NULL,
     -- normalized_score, all scores are topped at 1
-    normalized_score REAL NOT NULL
+    normalized_score REAL NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
 CREATE UNIQUE INDEX reviews_task_id_type ON reviews (task_id, type);
