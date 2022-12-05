@@ -1,30 +1,8 @@
-CREATE TYPE task_status AS ENUM (
-    'created', 
-    'review', 
-    'published',
-    'rejected',
-    'accepted',
-    'client_approved',
-    'master_approved',
-    'closed'
-);
-
 CREATE TABLE task (
     -- unique task id
     task_id BIGSERIAL NOT NULL,
-    -- unique task info id
-    info_id BIGSERIAL NOT NULL,
     -- unique user id
-    user_id BIGSERIAL NOT NULL,
-    -- task accomplishment status
-    status task_status NOT NULL,
-);
-
-CREATE TABLE task_info {
-    -- unique task info id
-    task_info_id BIGSERIAL NOT NULL
-    -- unique task id
-    task_id BIGSERIAL NOT NULL,
+    user_id BIGINT NOT NULL,
     -- tag with one-word description of the task
     tag TEXT NOT NULL,
     -- description of the problem
@@ -35,7 +13,4 @@ CREATE TABLE task_info {
     photo TEXT NULL,
     -- user's address
     address TEXT NOT NULL
-
-    -- use task_id as the primary key for lookups
-    CONSTRAINT task_info_pk PRIMARY KEY (task_id)
-};
+)
