@@ -2,7 +2,7 @@ CREATE TYPE user_role AS ENUM ('master', 'client');
 
 CREATE TYPE user_status AS ENUM ('pending', 'accepted', 'blocked');
 
-CREATE TABLE reviews (
+CREATE TABLE users (
     -- unique id of the user
     user_id BIGSERIAL NOT NULL,
     -- name, surname of the user
