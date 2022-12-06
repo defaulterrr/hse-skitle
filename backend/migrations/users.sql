@@ -10,11 +10,18 @@ CREATE TABLE users (
     -- user's login
     login TEXT NOT NULL,
     -- user's password
-    password TEXT NOT NULL,
+    password_hash TEXT NOT NULL,
     -- user's role
     role user_role NOT NULL,
     -- user's after registration
     status user_status NOT NULL,
     -- creation timestamp
     created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-)
+    -- user's address
+    address TEXT NOT NULL,
+    -- payment credential for future use
+    payments_credentials TEXT NOT NULL
+    CONSTRAINT userID_pk PRIMARY KEY (user_id)
+);
+
+CREATE UNIQUE INDEX username_unique_idx ON users (login);
